@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Reset hasła</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.navbar{
+width: 100%;
+background: rgb(240, 240, 240);
+display: block;
+overflow: hidden;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 99;
+}
+.nazwa{
+    margin-left: 20px;
+    font-size: 25px;
+}
+.passreset{
+display: block;
+position: relative;
+margin-top: 130px;
+float: left;
+margin-left:30%;
+width: 40%;
+}
+.p1{
+display: block;
+margin-top: 90px;
+font-size: 25px;
+color: rgb(95,95,95);
+}
+.h1{
+font-size: 40px;
+}
+@media screen and (max-width:800px){
+    .h1{
+font-size: 30px;
+    }
+    .p1{
+font-size: 20px;
+    }
+    .passreset{
+width: 80%;
+margin-left: 10%;
+    }
+}
+</style>
+</head>
+<body style="font-family:Arial, Helvetica, sans-serif ">
+    <nav class="navbar" id="navbar">
+        <p class="nazwa">NAZWA</p>
+    </nav>
+    <div class="passreset">
+<h1 class="h1">Fajnie, że resetujesz hasło!</h1>
+
+<p class="p1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, voluptate maxime labore unde voluptatem nostrum in quaerat deserunt tempore pariatur. Expedita nihil tempore, aut consectetur consequuntur voluptate dolor dicta reprehenderit?</p>
+    
+</div>
+    <script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-80px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Reset hasła</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.navbar{
+width: 100%;
+background: rgb(240, 240, 240);
+display: block;
+overflow: hidden;
+position: fixed;
+top: 0;
+left: 0;
+transition: top 0.25s;
+z-index: 99;
+}
+.nazwa{
+    margin-left: 20px;
+    font-size: 25px;
+}
+.passreset{
+display: block;
+position: relative;
+margin-top: 110px;
+float: left;
+margin-left:30%;
+width: 40%;
+}
+.label{
+display: block;
+margin-left: 10px;
+margin-top: 55px;
+font-size: 20px;
+}
+.password{
+width: 95%;
+height: 40px;
+border: 3px solid rgb(50, 120, 245);
+border-radius: 8px;
+margin-left: 0;
+margin-top: 5px;
+outline: none;
+padding: 5px;
+font-size: 18px;
+padding-left: 15px;
+transition-duration: 0.15s;
+}
+.password:focus{
+box-shadow: 0 0 8px 0 rgb(50, 120, 245);
+}
+.button{
+text-align: center;
+position: relative;
+left: 48%;
+margin-top: 80px;
+background-color:white;
+padding:15px 30px 15px 30px;
+font-size:20px;
+color:black;
+transition:0.05s;
+transition-duration: 0.25s;
+border: 3px solid rgb(50, 120, 245);
+border-radius:8px;
+transform: translate(-50%, -50%);
+}
+.button:hover{
+background-color:rgb(70, 140, 245);
+border-color: rgb(50, 120, 245);
+color: white;
+}
+.button:active{
+background-color: rgb(25, 40, 140);
+border-color: rgb(25, 40, 140);
+transition: 0s;
+transition-duration: 0s;
+}
+@media screen and (max-width: 800px) {
+    .passreset{
+width: 90%;
+margin-left: 5%;
+margin-right: 5%;
+    }
+    .email{
+        width: 95%;
+margin-left: 0;
+    }
+    .button{
+margin-top: 130px;
+margin-bottom: 150px;
+    }
+}
+</style>
+</head>
+<body style="font-family:Arial, Helvetica, sans-serif ">
+    <nav class="navbar" id="navbar">
+        <p class="nazwa">NAZWA</p>
+    </nav>
+    <div class="passreset">
+<h1>Fajnie, że resetujesz hasło!</h1>
+
+<p style="font-size: 20px; color: rgb(95,95,95);"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus minus alias sunt in error ut voluptate eos rem iure nobis quis blanditiis facere ab sint repellendus, reiciendis perspiciatis, eaque necessitatibus exercitationem est repudiandae reprehenderit. Provident sit numquam dignissimos labore natus aperiam atque, ducimus eum animi velit inventore hic quos corporis.</p>
+
+<label class="label" for="password">Podaj nowe hasło:</label>
+<input type="password" id="password1" class="password" required>
+
+<label class="label" for="password">Powtórz nowe hasło:</label>
+<input type="password" id="password2" class="password" required>
+    
+<a href="hasbulla2.html"><button type="button" class="button" id="button">Zresetuj hasło</button></a>
+    </div>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-80px";
+          }
+          prevScrollpos = currentScrollPos;
+        }
+        </script>
+        <script>
+    let pass1 = document.getElementById("password1");
+    let pass2 = document.getElementById("password2");
+    let run = document.getElementById("button");
+
+    run.addEventListener("click", () => {
+        if (pass1.value !== pass2.value) {
+            pass1.style.border = '3px solid red';
+            pass2.style.border = '3px solid red';
+            alert("Hasła nie są takie same");
+            evt.preventDefault();
+        }
+    })
+        </script>
+</body>
+</html>
